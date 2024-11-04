@@ -1,14 +1,66 @@
 using System;
+using System.Configuration.Assemblies;
 
 class Program
 {
-    static void Main(string[] args)
+
+// Creating functions/methods
+    static int AddNumbers(int n1, int n2) // You must declare the parameter variable type. Using static means you can use the function without an instance of the object.
     {
-        Console.WriteLine("Hello Sandbox World!");
+        int total = n1 + n2;
+        int total2 = n1 * n2;
+        return total; // You can only return one value in C#.
+    }
+    public static void Main(string[] args)
+    {
+
+        int total = AddNumbers(20, 30);
+        Console.WriteLine(total);
+
+    // Do While loops
+
+        // int age;
+        // do // The block in the loop will execute at least once. You don't need an entrance strategy in a do while loop.
+        // {
+        //     Console.Write("Please enter your age: (0-125): ");
+        //     age = int.Parse(Console.ReadLine());
+        //     Console.WriteLine($"Your age is: {age}");
+        // }while(age < 0 || age > 125);
+
+    // Lists
+            
+        // List <string> myColors = new List<string>(); // List <variable type> listName = new List<variableType>();
+
+        // myColors.Add("Red");
+        // myColors.Add("Green");
+        // myColors.Add("Blue");
+
+        // // For each loops
+        // foreach(string color in myColors)
+        // {
+        //     Console.WriteLine(color);
+        // }
+        
+    // For loops
+
+        // for(int i = 0; i < 10; i++) // (initialize i; conditional; executed with each iteration)
+        // {
+        //     Console.WriteLine(i);
+        // }
+
+        // int age = -1;
+        // while(age < 0 || age > 125)
+        // {
+        //     Console.Write("Please enter your age: (0-125): ");
+        //     age = int.Parse(Console.ReadLine());
+        //     Console.WriteLine($"Your age is: {age}");
+        // }
+
     }
 }
 
 
+// Week 1
 
 // class Program
 // {
@@ -37,4 +89,11 @@ class Program
 
 //         // Console.WriteLine("$Your name is: {name}\n");
 //     }
+// }
+
+// {
+//     static void Main(string[] args)
+//     // {
+//     //     Console.WriteLine("Hello Sandbox World!");
+//     // }
 // }
