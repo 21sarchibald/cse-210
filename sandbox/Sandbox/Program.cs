@@ -1,21 +1,35 @@
 using System;
 using System.Configuration.Assemblies;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
 
-// Creating functions/methods
-    static int AddNumbers(int n1, int n2) // You must declare the parameter variable type. Using static means you can use the function without an instance of the object.
+    static void Main(string[] args)
     {
-        int total = n1 + n2;
-        int total2 = n1 * n2;
-        return total; // You can only return one value in C#.
-    }
-    public static void Main(string[] args)
-    {
+        int x = 10;
+        int y = x++;
 
-        int total = AddNumbers(20, 30);
-        Console.WriteLine(total);
+        Console.WriteLine($"{y}, {x}");
+
+        int z = ++y;
+        Console.WriteLine($"{z}, {y}");
+    }
+
+}
+// Creating functions/methods
+
+    // static int AddNumbers(int n1, int n2) // You must declare the parameter variable type. Using static means you can use the function without an instance of the object.
+    // {
+    //     int total = n1 + n2;
+    //     int total2 = n1 * n2;
+    //     return total; // You can only return one value in C#.
+    // }
+    // public static void Main(string[] args)
+    // {
+
+    //     int total = AddNumbers(20, 30);
+    //     Console.WriteLine(total);
 
     // Do While loops
 
@@ -56,8 +70,8 @@ class Program
         //     Console.WriteLine($"Your age is: {age}");
         // }
 
-    }
-}
+//     }
+// }
 
 
 // Week 1
