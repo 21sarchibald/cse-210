@@ -4,19 +4,86 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
+    class Circle // This is the class.
+    {
+        private double radius; // Typically you want to keep the attributes list as small as possible.
+        public Circle(double radius) // This is the constructor, which allows you to initialize the object the way that you choose.
+        {
+            // Console.WriteLine("In the constructor");
+            this.radius = radius; // In circle, set the radius equal to the radius that is passed into the parameter of the function.
+        }
 
+        public double GetArea()
+        {
+            return Math.PI * radius * radius;
+        }
+
+        public double GetDiameter()
+        {
+            return 2 * radius;
+        }
+
+        public double GetCircumference()
+        {
+            return Math.PI * 2 * radius;
+        }
+
+        public double GetRadius()
+        {
+            return radius;
+        }
+
+        public void SetRadius(double radius) // void means the function does not return anything.
+        {
+            this.radius = radius;
+        }
+
+        public void Display()
+        {
+            Console.WriteLine($"Area is: {GetArea()}");
+            Console.WriteLine($"Radius is: {GetRadius()}");
+            Console.WriteLine($"Diameter is: {GetDiameter()}");
+            Console.WriteLine($"Circumference is: {GetCircumference()}");
+        }
+    }
     static void Main(string[] args)
     {
+        // Console.WriteLine("Bonjour mes amis");
+
         int x = 10;
-        int y = x++;
 
-        Console.WriteLine($"{y}, {x}");
+        Circle myCircle = new Circle(x); // Circle is now a data type (just like int or float).
+        Circle myCircle2 = new Circle(x + 10);
 
-        int z = ++y;
-        Console.WriteLine($"{z}, {y}");
+        myCircle.Display();
+        myCircle.SetRadius(x + 100);
+        myCircle.Display();
+        // myCircle.radius = 1000; This only works if the variable is public. We usually keep it private to keep control of the variable.
+
+        // Console.WriteLine(myCircle.GetArea());
+        // Console.WriteLine(myCircle2.GetArea());
+
+        // Console.WriteLine(myCircle.GetCircumference());
+        // Console.WriteLine(myCircle.GetDiameter());
+        // Console.WriteLine(myCircle2.GetRadius());
+
     }
 
 }
+
+// Variable - noun/thing - name, age, number
+// Function - verb - do something, calculateArea(), receiveOutput()
+
+// Object - also noun/thing -
+// Combining variables (attributes) and functions (methods) into one datatype (class)
+// Object - instantiation (creation) of class
+// Recipe and cake (the code we write is the recipe, when I create a variable of that type, I have a cake
+
+// class creation
+// - Name the class, then decide class methods, then create class attributes
+
+
+
 // Creating functions/methods
 
     // static int AddNumbers(int n1, int n2) // You must declare the parameter variable type. Using static means you can use the function without an instance of the object.
