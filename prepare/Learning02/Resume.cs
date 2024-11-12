@@ -10,7 +10,6 @@ public class Resume
 
         foreach (Job job in _jobs)
         {
-            // Job jobInstance = new Job();
             job.Display();
         }
     }
