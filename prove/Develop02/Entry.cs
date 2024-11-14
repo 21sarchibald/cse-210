@@ -1,8 +1,24 @@
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 
 public class Entry {
-
-    
+    private string prompt;
+    private string userInput;
+    private string date;
+    public Entry()
+    {
+        prompt = "";
+        userInput = "";
+        date = "";
+    }
+            
+    public void CreateEntry()
+    {
+        prompt = GetRandomPrompt();
+        userInput = Console.ReadLine();
+        date = GetCurrentDate();
+    }
     List<string> _prompts = new List<string>() // add more to this list.
     {
         "What was the best part of my day? ",
@@ -12,6 +28,15 @@ public class Entry {
         "If I had one thing I could do over today, what would it be? "
     };
     
+    public string GetDate()
+    {
+        return date;
+    }
+
+    public void SetDate(string date)
+    {
+        this.date = date;
+    }
     public string GetRandomPrompt()
     {
         Random rnd = new Random();
@@ -23,9 +48,14 @@ public class Entry {
     }
 
 
-    public DateTime GetDate()
+    public string GetCurrentDate()
     {
         DateTime date = DateTime.Today;
-        return date;
+        return date.ToString();
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"Date: {date} - Prompt: {prompt}\n{userInput}");
     }
 }

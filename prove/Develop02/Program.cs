@@ -8,50 +8,49 @@ class Program
 {
     static void Main(string[] args)
     {
-        // string fileName;
-        int menuSelection;
+
+        int selection = 0;
+        Journal myJournal = new Journal();
         do
         {
             DisplayMenu();
-            menuSelection = GetSelection();
-        }
-        while (menuSelection != 5);
-        
-    }
+            selection = int.Parse(Console.ReadLine());
+            if (selection == 1)
+        {
+            Entry entry = new Entry();
+            entry.CreateEntry();
+    
+            
+            myJournal.AddEntry(entry);
 
+        }
+        else if (selection == 2)
+        {
+            myJournal.DisplayAllEntries();
+        }
+
+        else if (selection == 3)
+        {
+            // Obtain file name and read from file
+        }
+
+        else if (selection == 4)
+        {
+            //Obtain file name and write to file
+        }
+        }
+        while (selection != 5);  
+    }
     static void DisplayMenu()
         {
             Console.WriteLine("Please select one of the following choices:\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit");
-            Console.WriteLine("What would you like to do? ");
+            Console.Write("What would you like to do? ");
         }
-
-    static int GetSelection()
-    {
-        int selection = int.Parse(Console.ReadLine());
-
-        if (selection == 1)
-        {
-            Entry entry = new Entry();
-            string prompt = entry.GetRandomPrompt();
-            string userInput = Console.ReadLine();
-            DateTime currentDate = entry.GetDate();
-
-            // CreateEntry()
-
-        }
-        if (selection == 2)
-        {
-            //DisplayAllEntries();
-        }
-
-        return selection;
-        
-    }
 
 // Uncomment this when you figure out how to write it to a file.
-    // static void CreateEntry(date, prompt, userEntry, fileName)
+    // static void CreateEntry(date, prompt, response, fileName)
     // {
-    //     string saveEntry = "${date}, {prompt}, {userEntry}, {fileName}";
+    //     string saveEntry = "${date}, {prompt}, {response}, {fileName}";
         
     // }
 
