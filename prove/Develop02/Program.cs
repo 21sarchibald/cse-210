@@ -19,8 +19,8 @@ class Program
         {
             Entry entry = new Entry();
             entry.CreateEntry();
-    
-            
+        
+           
             myJournal.AddEntry(entry);
 
         }
