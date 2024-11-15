@@ -8,11 +8,10 @@ public class Entry {
     private string date;
     public Entry()
     {
-        prompt = "";
-        userInput = "";
-        date = "";
     }
-            
+    public Entry(string date, string prompt, string response)
+    {
+    }    
     public void CreateEntry()
     {
         prompt = GetRandomPrompt();
@@ -27,12 +26,11 @@ public class Entry {
         "What was the strongest emotion I felt today? ",
         "If I had one thing I could do over today, what would it be? "
     };
-    
+
     public string GetDate()
     {
         return date;
     }
-
     public void SetDate(string date)
     {
         this.date = date;
@@ -46,14 +44,19 @@ public class Entry {
         Console.WriteLine(randomPrompt);
         return randomPrompt;
     }
-
-
     public string GetCurrentDate()
     {
         DateTime date = DateTime.Today;
-        return date.ToString();
+        return date.ToString("d");
     }
+    public override string ToString()
+    {
+        string outputString;
 
+        outputString = $"{date}#{prompt}#{userInput}";
+        
+        return outputString;
+    }
     public void Display()
     {
         Console.WriteLine($"Date: {date} - Prompt: {prompt}\n{userInput}");

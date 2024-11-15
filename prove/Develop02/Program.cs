@@ -16,36 +16,46 @@ class Program
             DisplayMenu();
             selection = int.Parse(Console.ReadLine());
             if (selection == 1)
-        {
-            Entry entry = new Entry();
-            entry.CreateEntry();
+            {
+                Entry entry = new Entry();
+                entry.CreateEntry();
         
-           
-            myJournal.AddEntry(entry);
+                myJournal.AddEntry(entry);
+            }
+            else if (selection == 2)
+            {
+                myJournal.DisplayAllEntries();
+            }
 
-        }
-        else if (selection == 2)
-        {
-            myJournal.DisplayAllEntries();
-        }
+            else if (selection == 3)
+            {
+                string fileName = GetFileName();
 
-        else if (selection == 3)
-        {
-            // Obtain file name and read from file
-        }
+                myJournal.ReadEntriesFromFile(fileName);
+            }
 
-        else if (selection == 4)
-        {
-            //Obtain file name and write to file
-        }
-        }
+            else if (selection == 4)
+            {
+                string fileName = GetFileName();
+
+                myJournal.WriteToFile(fileName);
+                //Obtain file name and write to file
+            }
+            }
+        
         while (selection != 5);  
-    }
+        }
     static void DisplayMenu()
         {
             Console.WriteLine("Please select one of the following choices:\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit");
             Console.Write("What would you like to do? ");
         }
+
+    static string GetFileName()
+    {
+        Console.WriteLine("What is the file name? ");
+        return Console.ReadLine();
+    }
 
 // Uncomment this when you figure out how to write it to a file.
     // static void CreateEntry(date, prompt, response, fileName)

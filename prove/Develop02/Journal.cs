@@ -17,20 +17,15 @@ public class Journal {
     }
 
     // Uncomment
-    // public void WriteToFile( string fileName)
-    // {
-    //     using (StreamWriter outputFile = new StreamWriter(fileName))
-    //     {
-    //         foreach (Entry entry in _entries)
-    //         {
-    //             outputFile.WriteLine(entry.ToString());
-    //         }
-    //     }
-    // }
-
-    public override string ToString()
+    public void WriteToFile( string fileName)
     {
-        return base.ToString();
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputFile.WriteLine(entry.ToString());
+            }
+        }
     }
 
     public void ReadEntriesFromFile(string fileName)
@@ -42,11 +37,11 @@ public class Journal {
             string[] parts = line.Split("#");
 
             string date = parts[0];
-            string question = parts [1];
+            string question = parts[1];
             string entryText = parts[2];
 
-            // Entry entry = new Entry(date, question, entryText);
-            // this.CreateEntry(entry);
+            Entry entry = new Entry(date, question, entryText);
+            AddEntry(entry);
         }
     }
 }
