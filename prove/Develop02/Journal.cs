@@ -4,7 +4,6 @@ public class Journal {
     
     public void AddEntry(Entry entry)
     {
-    
         _entries.Add(entry);
     }
 
@@ -15,8 +14,6 @@ public class Journal {
             entry.Display();
         }
     }
-
-    // Uncomment
     public void WriteToFile( string fileName)
     {
         using (StreamWriter outputFile = new StreamWriter(fileName))
@@ -27,7 +24,6 @@ public class Journal {
             }
         }
     }
-
     public void ReadEntriesFromFile(string fileName)
     {
         string[] lines = System.IO.File.ReadAllLines(fileName);
