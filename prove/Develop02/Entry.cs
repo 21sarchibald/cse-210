@@ -27,7 +27,12 @@ public class Entry {
         "Who was the most interesting person I interacted with today? ",
         "How did I see the hand of the Lord in my life today? ",
         "What was the strongest emotion I felt today? ",
-        "If I had one thing I could do over today, what would it be? "
+        "If I had one thing I could do over today, what would it be? ",
+        "What is one thing I did today to work towards a goal I currently have? ",
+        "What was one quality I saw in another person today that I want to start developing in myself? ",
+        "What did I do to make today a good day? ",
+        "What did I accomplish today to help others come unto Christ? ",
+        "When did I feel the Spirit of the Lord the strongest today?"
     };
 
     public string GetDate()

@@ -39,9 +39,8 @@ class Program
                 string fileName = GetFileName();
 
                 myJournal.WriteToFile(fileName);
-                //Obtain file name and write to file
             }
-            }
+        }
         
         while (selection != 5);  
         }
@@ -56,12 +55,5 @@ class Program
         Console.WriteLine("What is the file name? ");
         return Console.ReadLine();
     }
-
-// Uncomment this when you figure out how to write it to a file.
-    // static void CreateEntry(date, prompt, response, fileName)
-    // {
-    //     string saveEntry = "${date}, {prompt}, {response}, {fileName}";
-        
-    // }
 
 }
