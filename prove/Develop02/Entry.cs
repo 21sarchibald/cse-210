@@ -11,6 +11,9 @@ public class Entry {
     }
     public Entry(string date, string prompt, string response)
     {
+        this.date = date;
+        this.prompt = prompt;
+        this.userInput = response;
     }    
     public void CreateEntry()
     {
@@ -41,7 +44,7 @@ public class Entry {
 
         int randomIndex = rnd.Next(0, _prompts.Count);
         string randomPrompt = _prompts[randomIndex];
-        Console.WriteLine(randomPrompt);
+        Console.WriteLine($"> {randomPrompt}");
         return randomPrompt;
     }
     public string GetCurrentDate()
@@ -60,5 +63,6 @@ public class Entry {
     public void Display()
     {
         Console.WriteLine($"Date: {date} - Prompt: {prompt}\n{userInput}");
+        Console.WriteLine();
     }
 }
