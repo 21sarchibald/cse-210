@@ -6,7 +6,6 @@ public class Journal {
     {
         _entries.Add(entry);
     }
-
     public void DisplayAllEntries()
     {
         foreach (Entry entry in _entries)
