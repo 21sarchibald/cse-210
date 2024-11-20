@@ -14,7 +14,26 @@ class Program
         reference.DisplayReference();
         scripture.SplitScripture();
 
-        scripture.SelectRandomWord();
+        
+        string word1 = scripture.SelectRandomWord();
+        string word2 = scripture.SelectRandomWord();
+        string word3 = scripture.SelectRandomWord();
+
+        bool quitProgram = false;
+
+        do
+        {
+            scripture.Display();
+            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+            string userInput = Console.ReadLine();
+            if (userInput == "quit")
+            {
+                quitProgram = true;
+            }
+        }
+            while (quitProgram == false);
+        
+        
 
 
         

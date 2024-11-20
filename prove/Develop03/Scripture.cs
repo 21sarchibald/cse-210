@@ -29,7 +29,8 @@ class Scripture {
     
     public void Display()
     {
-
+        reference.DisplayReference();
+        Console.WriteLine(_scripture);
     }
     public void SplitScripture()
     {
