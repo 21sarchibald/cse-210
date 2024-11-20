@@ -21,7 +21,7 @@ public class Entry {
         userInput = Console.ReadLine();
         date = GetCurrentDate();
     }
-    List<string> _prompts = new List<string>() // add more to this list.
+    List<string> _prompts = new List<string>()
     {
         "What was the best part of my day? ",
         "Who was the most interesting person I interacted with today? ",
