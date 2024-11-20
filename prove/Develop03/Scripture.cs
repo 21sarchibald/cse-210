@@ -1,11 +1,13 @@
+using System.Reflection.Metadata;
+
 class Scripture {
 
     private List <string> _words = new List<string>();
 
     private string _scripture;
 
-    static Reference reference = new Reference();
-    string _reference = reference.GetReference();
+    static Reference _reference = new Reference();
+    // string _reference = reference.GetReference();
 
     public void SetScripture(string scripture)
     {
@@ -29,8 +31,11 @@ class Scripture {
     
     public void Display()
     {
-        reference.DisplayReference();
-        Console.WriteLine(_scripture);
+        _reference.DisplayReference();
+        foreach (string word in _words)
+        {
+            Console.Write($"{word} ");
+        }
     }
     public void SplitScripture()
     {
@@ -42,14 +47,26 @@ class Scripture {
 
     }
 
-    public string SelectRandomWord()
+    public int SelectRandomWord()
     {
         Random rnd = new Random();
 
         int randomIndex = rnd.Next(0, _words.Count);
-        string randomWord = _words[randomIndex];
-        Console.WriteLine($"> {randomWord}");
-        return randomWord;
+        // string randomWord = _words[randomIndex];
+        // Console.WriteLine($"> {randomWord}");
+        return randomIndex;
+    }
+
+    public List<string> HideWords()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            int randomIndex = SelectRandomWord();
+            Word word = new Word();
+            _words[randomIndex] = word.HideWord(_words[randomIndex]);
+        }
+        return _words;
+
     }
 
 }

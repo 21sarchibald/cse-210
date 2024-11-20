@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 class Program
 {
@@ -15,15 +16,16 @@ class Program
         scripture.SplitScripture();
 
         
-        string word1 = scripture.SelectRandomWord();
-        string word2 = scripture.SelectRandomWord();
-        string word3 = scripture.SelectRandomWord();
+        // string word1 = scripture.SelectRandomWord();
+        // string word2 = scripture.SelectRandomWord();
+        // string word3 = scripture.SelectRandomWord();
 
         bool quitProgram = false;
 
         do
         {
             scripture.Display();
+            scripture.HideWords();
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
             string userInput = Console.ReadLine();
             if (userInput == "quit")
