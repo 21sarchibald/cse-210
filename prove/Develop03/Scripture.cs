@@ -56,8 +56,6 @@ class Scripture {
         Random rnd = new Random();
 
         int randomIndex = rnd.Next(0, _words.Count);
-        // string randomWord = _words[randomIndex];
-        // Console.WriteLine($"> {randomWord}");
         return randomIndex;
     }
 
@@ -66,15 +64,10 @@ class Scripture {
         for (int i = 0; i < 3; i++)
         {
             int randomIndex = SelectRandomWord();
-            // Word word = new Word();
-            // _words[randomIndex] = _words.HideWord(_words[randomIndex]);
             Word randomSelector = _words[randomIndex];
             string randomWord = randomSelector.GetWord();
             string hiddenWord = randomSelector.HideWord(randomWord); // not sure on this.
             _words[randomIndex]._word = hiddenWord;
-
-            // _words[randomIndex].GetWord() = _words.GetWord();
-            // HideWord(_words[randomIndex]);
         }
         return _words;
 
