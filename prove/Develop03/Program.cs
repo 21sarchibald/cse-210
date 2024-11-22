@@ -28,9 +28,13 @@ class Program
             {
                 quitProgram = true;
             }
+            if (scripture.IsCompletelyHidden())
+            {
+                reference.DisplayReference();
+                scripture.Display();
+                quitProgram = true;
+            }
         }
             while (quitProgram == false);
-        
-
     }
 }

@@ -1,3 +1,4 @@
+using System.Diagnostics.Metrics;
 using System.Reflection.Metadata;
 
 class Scripture {
@@ -79,15 +80,25 @@ class Scripture {
 
     }
 
-    // public bool IsCompletelyHidden(List<Word> _words)
-    // {
-    //     foreach (Word word in _words)
-    //     {
-    //         if (word._isHidden)
-    //         {
-
-    //         }
-    //     }
-    // }
+    public bool IsCompletelyHidden()
+    {
+        int counter = 0;
+        foreach (Word word in _words)
+        {
+            
+            if (word._isHidden)
+            {
+                counter += 1;
+            }
+        }
+        if (counter == _words.Count)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }
