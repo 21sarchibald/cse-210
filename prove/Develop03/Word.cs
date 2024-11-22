@@ -1,13 +1,24 @@
 public class Word 
 {
-    private string _word;
 
     private string _hiddenWord;
 
+    public bool _isHidden;
+
+    public string _word;
+
     static Scripture scripture = new Scripture();
-    List<string> _words = scripture.GetWords();
+    List<Word> _words = scripture.GetWords();
 
+    public void SetWord(string word)
+    {
+        _word = word;
+    }
 
+    public string GetWord()
+    {
+        return _word;
+    }
 
     public string HideWord(string word)
     {
@@ -18,9 +29,11 @@ public class Word
         {
             _hiddenWord += "_";
         }
+        _isHidden = true;
         return _hiddenWord;
-            
     }
+
+
 
 
 

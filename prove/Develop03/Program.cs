@@ -14,11 +14,6 @@ class Program
         scripture.SetScripture("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
         scripture.SplitScripture();
 
-        
-        // string word1 = scripture.SelectRandomWord();
-        // string word2 = scripture.SelectRandomWord();
-        // string word3 = scripture.SelectRandomWord();
-
         bool quitProgram = false;
 
         do

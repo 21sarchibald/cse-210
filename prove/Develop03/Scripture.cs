@@ -2,7 +2,7 @@ using System.Reflection.Metadata;
 
 class Scripture {
 
-    private List <string> _words = new List<string>();
+    private List <Word> _words = new List<Word>();
 
     private string _scripture;
 
@@ -19,12 +19,12 @@ class Scripture {
         return _scripture;
     }
 
-    public void SetWords(List<string> words)
+    public void SetWords(List<Word> words)
     {
         _words = words;
     }
 
-    public List<string> GetWords()
+    public List<Word> GetWords()
     {
         return _words;
     }
@@ -32,19 +32,22 @@ class Scripture {
     public void Display()
     {
         _reference.DisplayReference();
-        foreach (string word in _words)
+        foreach (Word word in _words)
         {
-            Console.Write($"{word} ");
+            Console.Write($"{word._word} ");
         }
     }
     public void SplitScripture()
     {
         string[] words = _scripture.Split(" ");
 
-        // Testing that the function really split it at the spaces.
         foreach (string word in words)
-            _words.Add(word);
-
+        {
+            // _words.Add(word);
+            Word _word = new Word();
+            _word.SetWord(word);
+            _words.Add(_word);
+        }
     }
 
     public int SelectRandomWord()
@@ -57,16 +60,34 @@ class Scripture {
         return randomIndex;
     }
 
-    public List<string> HideWords()
+    public List<Word> HideWords()
     {
         for (int i = 0; i < 3; i++)
         {
             int randomIndex = SelectRandomWord();
-            Word word = new Word();
-            _words[randomIndex] = word.HideWord(_words[randomIndex]);
+            // Word word = new Word();
+            // _words[randomIndex] = _words.HideWord(_words[randomIndex]);
+            Word randomSelector = _words[randomIndex];
+            string randomWord = randomSelector.GetWord();
+            string hiddenWord = randomSelector.HideWord(randomWord); // not sure on this.
+            _words[randomIndex]._word = hiddenWord;
+
+            // _words[randomIndex].GetWord() = _words.GetWord();
+            // HideWord(_words[randomIndex]);
         }
         return _words;
 
     }
+
+    // public bool IsCompletelyHidden(List<Word> _words)
+    // {
+    //     foreach (Word word in _words)
+    //     {
+    //         if (word._isHidden)
+    //         {
+
+    //         }
+    //     }
+    // }
 
 }
