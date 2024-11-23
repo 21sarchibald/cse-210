@@ -18,6 +18,7 @@ class Program
 
         do
         {
+            Console.Clear();
             reference.DisplayReference();
             scripture.Display();
             scripture.HideWords();
@@ -30,6 +31,7 @@ class Program
             }
             if (scripture.IsCompletelyHidden())
             {
+                Console.Clear();
                 reference.DisplayReference();
                 scripture.Display();
                 quitProgram = true;
