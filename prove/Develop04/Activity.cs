@@ -45,4 +45,23 @@ class Activity
         Console.WriteLine();
     }
 
+    public void DisplayEndMessage()
+    {
+        Console.WriteLine();
+
+        // Spinner for a lil bit.
+
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_title}.");
+    }
+
+    public void DisplayCountdown(int countDown)
+    {
+        for (int i = countDown; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+    }
+
 }

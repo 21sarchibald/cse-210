@@ -14,6 +14,7 @@ class Program
             BreathingActivity breathing = new BreathingActivity();
             breathing.Display();
             breathing.SetDuration(GetDuration());
+            breathing.DisplayCountdown(5);
         }
         else if (_menuSelection == 2)
         {
@@ -55,4 +56,5 @@ class Program
         Console.Write("How long, in seconds, would you like for your session? ");
         return int.Parse(Console.ReadLine());
     }
+
 }
