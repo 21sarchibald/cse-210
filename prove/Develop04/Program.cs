@@ -14,7 +14,9 @@ class Program
             BreathingActivity breathing = new BreathingActivity();
             breathing.Display();
             breathing.SetDuration(GetDuration());
-            breathing.DisplayCountdown(5);
+            breathing.DisplayStart();
+            breathing.ExecuteActivity();
+            breathing.DisplayEndMessage();
         }
         else if (_menuSelection == 2)
         {

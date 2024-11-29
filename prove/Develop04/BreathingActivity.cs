@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 class BreathingActivity: Activity
 {
     private string _breathIn;
@@ -9,5 +11,17 @@ class BreathingActivity: Activity
         _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
 
-    
+    public void ExecuteActivity()
+    {
+        while (DateTime.Now < _endTime)
+        {
+            Console.WriteLine();
+            Console.Write("Breathe in...");
+            DisplayCountdown(4);
+            Console.WriteLine();
+            Console.Write("Now breathe out...");
+            DisplayCountdown(8);
+            Console.WriteLine();
+        }
+    }
 }

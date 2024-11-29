@@ -5,11 +5,13 @@ class Activity
     protected string _title;
     protected string _description;
     protected int _duration;
+    protected DateTime _currentTime = DateTime.Now;
+    protected DateTime _endTime;
     protected string _endMessage;
 
     public Activity()
     {
-
+    
     }
 
 
@@ -26,6 +28,7 @@ class Activity
     public void SetDuration(int duration)
     {
         _duration = duration;
+        _endTime = _currentTime.AddSeconds(_duration);
     }
 
     public int GetDuration()
@@ -45,12 +48,23 @@ class Activity
         Console.WriteLine();
     }
 
+    public void DisplayStart()
+    {
+        Console.Clear();
+        Console.WriteLine();
+        Console.WriteLine("Get Ready...");
+        DisplayCountdown(5);
+        Console.WriteLine();
+    }
+
     public void DisplayEndMessage()
     {
         Console.WriteLine();
+        Console.WriteLine("Well done!!");
 
-        // Spinner for a lil bit.
+        DisplayCountdown(5);
 
+        Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_title}.");
     }
 
