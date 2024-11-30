@@ -5,7 +5,7 @@ class Activity
     protected string _title;
     protected string _description;
     protected int _duration;
-    protected DateTime _currentTime = DateTime.Now;
+    protected DateTime _currentTime;
     protected DateTime _endTime;
     protected string _endMessage;
 
@@ -28,7 +28,6 @@ class Activity
     public void SetDuration(int duration)
     {
         _duration = duration;
-        _endTime = _currentTime.AddSeconds(_duration);
     }
 
     public int GetDuration()
@@ -39,6 +38,11 @@ class Activity
     // {
     //     _endMessage = endMessage;
     // }
+    public void SetEndTime(int duration)
+    {
+        _currentTime = DateTime.Now;
+        _endTime = _currentTime.AddSeconds(duration);
+    }
 
     public void Display()
     {

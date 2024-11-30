@@ -15,7 +15,7 @@ class Program
             breathing.Display();
             breathing.SetDuration(GetDuration());
             breathing.DisplayStart();
-            breathing.ExecuteActivity();
+            breathing.DisplayBreathing();
             breathing.DisplayEndMessage();
         }
         else if (_menuSelection == 2)
@@ -23,7 +23,10 @@ class Program
             ReflectionActivity reflection = new ReflectionActivity();
             reflection.Display();
             reflection.SetDuration(GetDuration());
-            Console.WriteLine(reflection.GetDuration()); // for testing
+            reflection.DisplayStart();
+            reflection.DisplayPrompt();
+            reflection.DisplayReflection();
+            reflection.DisplayEndMessage();
         }
         else if (_menuSelection == 3)
         {
