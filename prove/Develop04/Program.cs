@@ -5,42 +5,51 @@ class Program
     private static int _menuSelection;
     static void Main(string[] args)
     {
-        DisplayMenu();
-        _menuSelection = GetMenuSelection();
 
-        if (_menuSelection == 1)
+        bool _quitProgram = false;
+
+        do
         {
-            BreathingActivity breathing = new BreathingActivity();
-            breathing.Display();
-            breathing.SetDuration(GetDuration());
-            breathing.DisplayStart();
-            breathing.DisplayBreathing();
-            breathing.DisplayEndMessage();
+            Console.Clear();
+            DisplayMenu();
+            _menuSelection = GetMenuSelection();
+            if (_menuSelection == 1)
+            {
+                BreathingActivity breathing = new BreathingActivity();
+                breathing.Display();
+                breathing.SetDuration(GetDuration());
+                breathing.DisplayStart();
+                breathing.DisplayBreathing();
+                breathing.DisplayEndMessage();
+            }
+            else if (_menuSelection == 2)
+            {
+                ReflectionActivity reflection = new ReflectionActivity();
+                reflection.Display();
+                reflection.SetDuration(GetDuration());
+                reflection.DisplayStart();
+                reflection.DisplayPrompt();
+                reflection.DisplayReflection();
+                reflection.DisplayEndMessage();
+            }
+            else if (_menuSelection == 3)
+            {
+                ListingActivity listing = new ListingActivity();
+                listing.Display();
+                listing.SetDuration(GetDuration());
+                listing.DisplayStart();
+                listing.DisplayPrompt();
+                listing.DisplayListing();
+                listing.DisplayEndMessage();
+            }
+            else
+            {
+                _quitProgram = true;
+            }
         }
-        else if (_menuSelection == 2)
-        {
-            ReflectionActivity reflection = new ReflectionActivity();
-            reflection.Display();
-            reflection.SetDuration(GetDuration());
-            reflection.DisplayStart();
-            reflection.DisplayPrompt();
-            reflection.DisplayReflection();
-            reflection.DisplayEndMessage();
-        }
-        else if (_menuSelection == 3)
-        {
-            ListingActivity listing = new ListingActivity();
-            listing.Display();
-            listing.SetDuration(GetDuration());
-            listing.DisplayStart();
-            listing.DisplayPrompt();
-            listing.DisplayListing();
-            listing.DisplayEndMessage();
-        }
-        else
-        {
-            // Quit
-        }
+            while (_quitProgram == false);
+
+        
 
     }
     private static void DisplayMenu()

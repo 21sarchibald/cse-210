@@ -2,8 +2,6 @@ using System.Diagnostics;
 
 class BreathingActivity: Activity
 {
-    private string _breathIn;
-    private string _breathOut;
 
     public BreathingActivity()
     {

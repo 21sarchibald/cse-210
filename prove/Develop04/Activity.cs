@@ -7,23 +7,10 @@ class Activity
     protected int _duration;
     protected DateTime _currentTime;
     protected DateTime _endTime;
-    protected string _endMessage;
 
     public Activity()
     {
-    
     }
-
-
-    // public void SetTitle(string title)
-    // {
-    //     _title = title;
-    // }
-
-    // public void SetDescription(string description)
-    // {
-    //     _description = description;
-    // }
 
     public void SetDuration(int duration)
     {
