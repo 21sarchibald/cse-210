@@ -82,4 +82,12 @@ class Activity
         }
     }
 
+    protected string GetRandomItem(List<string> list)
+    {
+        Random rnd = new Random();
+        int random = rnd.Next(0, list.Count);
+        string randomItem = list[random];
+        return randomItem;
+    }
+
 }

@@ -5,7 +5,6 @@ class Program
     private static int _menuSelection;
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
         DisplayMenu();
         _menuSelection = GetMenuSelection();
 
@@ -33,6 +32,10 @@ class Program
             ListingActivity listing = new ListingActivity();
             listing.Display();
             listing.SetDuration(GetDuration());
+            listing.DisplayStart();
+            listing.DisplayPrompt();
+            listing.DisplayListing();
+            listing.DisplayEndMessage();
         }
         else
         {
@@ -40,7 +43,6 @@ class Program
         }
 
     }
-
     private static void DisplayMenu()
     {
         Console.WriteLine("Menu Options:");
@@ -55,7 +57,6 @@ class Program
         int menuSelection = int.Parse(Console.ReadLine());
         return menuSelection;
     }
-
     private static int GetDuration()
     {
         Console.Write("How long, in seconds, would you like for your session? ");

@@ -24,14 +24,6 @@ class ReflectionActivity: Activity
         // _duration = duration;
     }
 
-    private string GetRandomItem(List<string> list)
-    {
-        Random rnd = new Random();
-        int random = rnd.Next(0, list.Count);
-        string randomItem = list[random];
-        return randomItem;
-    }
-
     public void DisplayPrompt()
     {
         Console.WriteLine();
