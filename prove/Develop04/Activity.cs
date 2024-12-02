@@ -21,10 +21,6 @@ class Activity
     {
         return _duration;
     }
-    // public void SetEndMessage(string endMessage)
-    // {
-    //     _endMessage = endMessage;
-    // }
     public void SetEndTime(int duration)
     {
         _currentTime = DateTime.Now;
@@ -57,6 +53,7 @@ class Activity
 
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_title}.");
+        DisplayCountdown(5);
     }
 
     public void DisplayCountdown(int countDown)
