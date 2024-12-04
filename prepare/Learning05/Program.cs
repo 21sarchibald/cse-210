@@ -16,5 +16,13 @@ class Program
         Circle circle = new Circle("blue", 4);
         Console.WriteLine(circle.GetColor());
         Console.WriteLine(circle.GetArea());
+
+        List<Shape> _shapes = [square, rectangle, circle];
+        
+        foreach (Shape shape in _shapes)
+        {
+            Console.WriteLine(shape.GetColor());
+            Console.WriteLine(shape.GetArea());
+        }
     }
 }
