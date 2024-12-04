@@ -12,5 +12,9 @@ class Program
         Rectangle rectangle = new Rectangle("yellow", 1, 2);
         Console.WriteLine(rectangle.GetColor());
         Console.WriteLine(rectangle.GetArea());
+
+        Circle circle = new Circle("blue", 4);
+        Console.WriteLine(circle.GetColor());
+        Console.WriteLine(circle.GetArea());
     }
 }
