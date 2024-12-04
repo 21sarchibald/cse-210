@@ -7,11 +7,11 @@
     public static void Main(string[] args)
     {
         Console.WriteLine("Hello Inheritance");
-        Person bob = new Person("Bob", "Billy", 37);
-        Person betty = new("Betty", "Billy", 39);
+        // Person bob = new Person("Bob", "Billy", 37);
+        // Person betty = new("Betty", "Billy", 39);
 
-        Console.WriteLine(bob.GetPersonInfo());
-        Console.WriteLine(betty.GetPersonInfo());
+        // Console.WriteLine(bob.GetPersonInfo());
+        // Console.WriteLine(betty.GetPersonInfo());
 
         Doctor doctorBob = new Doctor("Bob", "Budge", 65, "Hack Saw");
         Console.WriteLine(doctorBob.GetDoctorInformation());
@@ -25,12 +25,12 @@
         Console.WriteLine(policeDoug.GetPoliceInformation());
         Console.WriteLine(policeDoug.GetPersonInfo());
 
-        SetPersonFirstName(bob, "Bobby");
-        Console.WriteLine(bob.GetPersonInfo());
+        // SetPersonFirstName(bob, "Bobby");
+        // Console.WriteLine(bob.GetPersonInfo());
 
         List<Person> people = new List<Person>();
-        people.Add(bob);
-        people.Add(betty);
+        // people.Add(bob);
+        // people.Add(betty);
         people.Add(doctorBob);
         people.Add(policeDoug);
 
