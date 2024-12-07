@@ -1,12 +1,13 @@
 using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
+using System.Runtime.CompilerServices;
 
 class Program
 {
     private static int _menuSelection;
     private static bool _quitProgram = false;
-    List<Goal> _goals = new List<Goal>();
+    protected static List<Goal> _goals = new List<Goal>();
     static void Main(string[] args)
     {
         do
@@ -18,17 +19,25 @@ class Program
 
             if (_menuSelection == 1)
             {
-                Console.WriteLine("hello");
                 DisplayMenu(_goalTypeMenu);
                 int _goalType = GetMenuSelection();
 
                 if (_goalType == 1)
                 {
-                    Console.WriteLine("type 1)");
+                    Console.Write("What is the name of your goal? ");
+                    string title = Console.ReadLine();
+                    Console.Write("What is a short description of it? ");
+                    string description = Console.ReadLine();
+                    Console.Write("What is the amount of points associated with this goal? ");
+                    int points = int.Parse(Console.ReadLine());
+                    
+                    Goal goal = new SimpleGoal(title, description, points);
+                    _goals.Add(goal);
+
                 }
                 if (_goalType == 2)
                 {
-
+                    
                 }
                 if (_goalType == 3)
                 {
@@ -38,7 +47,13 @@ class Program
             }
             else if (_menuSelection == 2)
             {
-               
+                int goalCount = 0;
+                foreach (Goal listGoal in _goals)
+                {
+                    goalCount += 1;
+                    Console.Write($"{goalCount}. ");
+                    listGoal.Display();
+                }
             }
             else if (_menuSelection == 3)
             {
