@@ -15,4 +15,17 @@ class SimpleGoal : Goal
         else
             Console.WriteLine($"[X] {_title} {_description})");
     }
+
+    public override string ToString()
+    {
+        string outputString;
+
+        outputString = $"EternalGoal:{_title}|{_description}|{_points}|{_isComplete}";
+        return outputString;
+    }
+
+    // public override void RecordEvent(string fileName)
+    // {
+
+    // }
 }

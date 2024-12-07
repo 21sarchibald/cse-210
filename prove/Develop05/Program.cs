@@ -1,12 +1,14 @@
 using System;
 using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
+using System.IO.Enumeration;
 using System.Runtime.CompilerServices;
 
 class Program
 {
     private static int _menuSelection;
     private static bool _quitProgram = false;
+    private static int _totalPoints = 0;
     protected static List<Goal> _goals = new List<Goal>();
     static void Main(string[] args)
     {
@@ -54,15 +56,27 @@ class Program
                     Console.Write($"{goalCount}. ");
                     listGoal.Display();
                 }
+                // Console.WriteLine();
+                // Console.WriteLine($"You have {_totalPoints} points.");
+                // Console.WriteLine();
             }
             else if (_menuSelection == 3)
             {
+                Console.Write("What is the name for the goal file? ");
+                string fileName = Console.ReadLine();
                 
+                using (StreamWriter outputFile = new StreamWriter(fileName))
+
+                    foreach (Goal goal in _goals)
+                        outputFile.WriteLine(goal.ToString());
             }
             else
             {
                 _quitProgram = true;
             }
+            Console.WriteLine();
+            Console.WriteLine($"You have {_totalPoints} points.");
+            Console.WriteLine();
         }
             while (_quitProgram == false);
 

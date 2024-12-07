@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
 abstract class Goal 
 {
@@ -15,5 +16,6 @@ abstract class Goal
     }
 
     abstract public void Display();
-
+    // abstract public void RecordEvent(string fileName);
+    // abstract public void SetComplete();
 }
