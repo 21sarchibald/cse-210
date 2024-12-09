@@ -24,4 +24,9 @@ class ChecklistGoal : Goal
         outputString = $"ChecklistGoal:{_title}|{_description}|{_points}|{_bonusPoints}|{_checklistNumber}|{_timesCompleted}|{_isComplete}";
         return outputString;
     }
+
+    public override void RecordEvent()
+    {
+        _timesCompleted += 1;
+    }
 }

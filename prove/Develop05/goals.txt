@@ -1,4 +1,4 @@
 0
-SimpleGoal:Simple|First goal|20|False
-EternalGoal:simple|yes|30
-ChecklistGoal:check|yay|10|3|50|0|False
+SimpleGoal:Simple goal|it is simple|10|False
+EternalGoal:eternal|long time|30
+ChecklistGoal:homework|do it every day|20|3|300|0|False

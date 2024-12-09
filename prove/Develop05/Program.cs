@@ -145,6 +145,28 @@ class Program
                 }
 
             }
+            else if (_menuSelection == 5)
+            {
+                Console.WriteLine("The goals are:");
+                int counter = 0;
+                foreach (Goal goal in _goals)
+                {
+                    counter += 1;
+                    Console.WriteLine($"{counter}. {goal.GetTitle()}");
+                }
+                Console.Write("Which goal did you accomplish? ");
+                int goalNumber = int.Parse(Console.ReadLine()) - 1;
+                Goal accomplishedGoal = _goals[goalNumber];
+                accomplishedGoal.RecordEvent();
+                int earnedPoints = _goals[goalNumber].GetPoints();
+                Console.WriteLine($"Congratulations! You have earned {earnedPoints} points!");
+                _totalPoints += earnedPoints;
+                Console.WriteLine($"You now have {_totalPoints} points.");
+
+        {
+            
+        }
+            }
             else
             {
                 _quitProgram = true;

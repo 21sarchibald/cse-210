@@ -24,8 +24,8 @@ class SimpleGoal : Goal
         return outputString;
     }
 
-    // public override void RecordEvent(string fileName)
-    // {
-
-    // }
+    public override void RecordEvent()
+    {
+        _isComplete = true;
+    }
 }

@@ -17,5 +17,8 @@ class EternalGoal : Goal
         outputString = $"EternalGoal:{_title}|{_description}|{_points}";
         return outputString;
     }
-
+    public override void RecordEvent()
+    {
+        
+    }
 }
