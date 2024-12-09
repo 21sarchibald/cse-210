@@ -1,1 +1,4 @@
-SimpleGoal:yes|yes|10|False
+0
+SimpleGoal:Simple|First goal|20|False
+EternalGoal:simple|yes|30
+ChecklistGoal:check|yay|10|3|50|0|False

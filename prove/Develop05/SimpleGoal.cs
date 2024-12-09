@@ -3,7 +3,7 @@ using System.Reflection;
 
 class SimpleGoal : Goal
 {
-    public SimpleGoal(string title, string description, int points) :base(title, description, points)
+    public SimpleGoal(string title, string description, int points, bool isComplete = false) :base(title, description, points)
     {
 
     }

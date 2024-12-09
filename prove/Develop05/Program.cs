@@ -62,7 +62,7 @@ class Program
                     Console.Write("What is the bonus for accomplishing it that many times? ");
                     int bonusPoints = int.Parse(Console.ReadLine());
 
-                    Goal checklistGoal = new ChecklistGoal(bonusPoints, checklistNumber, title, description, points);
+                    Goal checklistGoal = new ChecklistGoal(title, description, points, bonusPoints, checklistNumber);
                     _goals.Add(checklistGoal);
                 }
 
@@ -93,6 +93,57 @@ class Program
                         outputFile.WriteLine(goal.ToString());
                     }
                 }
+            }
+            else if (_menuSelection == 4)
+            {
+                Console.Write("What is the file name for the goal file? ");
+                string fileName = Console.ReadLine();
+                // ReadGoalsFromFile(fileName);
+                string[] lines = System.IO.File.ReadAllLines(fileName);
+                lines = lines.Skip(1).ToArray();
+                foreach (string line in lines)
+                {
+                    string[] type = line.Split(":");
+
+                    if (type[0] == "SimpleGoal")
+                    {
+                        string[] parts = type[1].Split("|");
+
+                        string title = parts[0];
+                        string description = parts[1];
+                        int points = int.Parse(parts[2]);
+                        bool isComplete = bool.Parse(parts[3]);
+
+                        Goal simpleGoal = new SimpleGoal(title, description, points, isComplete);
+                        _goals.Add(simpleGoal);
+                    }
+                    else if (type[0] == "EternalGoal")
+                    {
+                        string[] parts = type[1].Split("|");
+
+                        string title = parts[0];
+                        string description = parts[1];
+                        int points = int.Parse(parts[2]);
+
+                        Goal eternalGoal = new EternalGoal(title, description, points);
+                        _goals.Add(eternalGoal);
+                    }
+                    else if (type[0] == "ChecklistGoal")
+                    {
+                        string[] parts = type[1].Split("|");
+
+                        string title = parts[0];
+                        string description = parts[1];
+                        int points = int.Parse(parts[2]);
+                        int bonusPoints = int.Parse(parts[3]);
+                        int checklistNumber = int.Parse(parts[4]);
+
+
+                        Goal checklistGoal = new ChecklistGoal(title, description, points, bonusPoints, checklistNumber);
+                        _goals.Add(checklistGoal);
+                    }
+                }
+
             }
             else
             {

@@ -3,7 +3,7 @@ class ChecklistGoal : Goal
     private int _bonusPoints;
     private int _checklistNumber;
     private int _timesCompleted = 0;
-    public ChecklistGoal(int bonusPoints, int checklistNumber, string title, string description, int points) :base(title, description, points)
+    public ChecklistGoal(string title, string description, int points, int bonusPoints, int checklistNumber) :base(title, description, points)
     {
         _bonusPoints = bonusPoints;
         _checklistNumber = checklistNumber;
@@ -11,7 +11,7 @@ class ChecklistGoal : Goal
 
     public override void Display()
     {
-        if (!_isComplete)
+        if (_timesCompleted < _checklistNumber)
             Console.WriteLine($"[ ] {_title} ({_description}) -- Currently completed: {_timesCompleted}/{_checklistNumber}");
         else
             Console.WriteLine($"[X] {_title} {_description}) -- Currently completed: {_timesCompleted}/{_checklistNumber}");
