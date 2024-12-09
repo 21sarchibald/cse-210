@@ -33,17 +33,37 @@ class Program
                     Console.Write("What is the amount of points associated with this goal? ");
                     int points = int.Parse(Console.ReadLine());
                     
-                    Goal goal = new SimpleGoal(title, description, points);
-                    _goals.Add(goal);
+                    Goal simpleGoal = new SimpleGoal(title, description, points);
+                    _goals.Add(simpleGoal);
 
                 }
                 if (_goalType == 2)
                 {
-                    
+                    Console.Write("What is the name of your goal? ");
+                    string title = Console.ReadLine();
+                    Console.Write("What is a short description of it? ");
+                    string description = Console.ReadLine();
+                    Console.Write("What is the amount of points associated with this goal? ");
+                    int points = int.Parse(Console.ReadLine());
+
+                    Goal eternalGoal = new EternalGoal(title, description, points);
+                    _goals.Add(eternalGoal);
                 }
                 if (_goalType == 3)
                 {
+                    Console.Write("What is the name of your goal? ");
+                    string title = Console.ReadLine();
+                    Console.Write("What is a short description of it? ");
+                    string description = Console.ReadLine();
+                    Console.Write("What is the amount of points associated with this goal? ");
+                    int points = int.Parse(Console.ReadLine());
+                    Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                    int checklistNumber = int.Parse(Console.ReadLine());
+                    Console.Write("What is the bonus for accomplishing it that many times? ");
+                    int bonusPoints = int.Parse(Console.ReadLine());
 
+                    Goal checklistGoal = new ChecklistGoal(bonusPoints, checklistNumber, title, description, points);
+                    _goals.Add(checklistGoal);
                 }
 
             }
@@ -64,11 +84,15 @@ class Program
             {
                 Console.Write("What is the name for the goal file? ");
                 string fileName = Console.ReadLine();
-                
-                using (StreamWriter outputFile = new StreamWriter(fileName))
-
+                using (StreamWriter outputFile = new StreamWriter(fileName)) 
+                {
+                    outputFile.WriteLine(_totalPoints);
+                    
                     foreach (Goal goal in _goals)
+                    {
                         outputFile.WriteLine(goal.ToString());
+                    }
+                }
             }
             else
             {

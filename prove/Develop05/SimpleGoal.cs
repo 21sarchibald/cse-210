@@ -20,7 +20,7 @@ class SimpleGoal : Goal
     {
         string outputString;
 
-        outputString = $"EternalGoal:{_title}|{_description}|{_points}|{_isComplete}";
+        outputString = $"SimpleGoal:{_title}|{_description}|{_points}|{_isComplete}";
         return outputString;
     }
 

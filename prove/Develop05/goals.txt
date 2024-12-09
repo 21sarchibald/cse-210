@@ -1,1 +1,1 @@
-EternalGoal:Serve others|Bake banana bread for people.|10|False
+SimpleGoal:yes|yes|10|False
