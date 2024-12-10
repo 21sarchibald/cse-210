@@ -13,7 +13,7 @@ class SimpleGoal : Goal
         if (!_isComplete)
             Console.WriteLine($"[ ] {_title} ({_description})");
         else
-            Console.WriteLine($"[X] {_title} {_description})");
+            Console.WriteLine($"[X] {_title} ({_description})");
     }
 
     public override string ToString()

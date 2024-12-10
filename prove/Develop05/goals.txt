@@ -1,4 +1,4 @@
 0
-SimpleGoal:Simple goal|it is simple|10|False
-EternalGoal:eternal|long time|30
-ChecklistGoal:homework|do it every day|20|3|300|0|False
+SimpleGoal:Finish Goal Program|Finish and turn in CSE210 goal program|10|False
+EternalGoal:Scripture Study|Read my scriptures every day for 30 minutes|10
+ChecklistGoal:Temple|Attend the temple 3 times|20|50|3|0|False

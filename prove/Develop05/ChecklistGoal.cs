@@ -14,7 +14,7 @@ class ChecklistGoal : Goal
         if (_timesCompleted < _checklistNumber)
             Console.WriteLine($"[ ] {_title} ({_description}) -- Currently completed: {_timesCompleted}/{_checklistNumber}");
         else
-            Console.WriteLine($"[X] {_title} {_description}) -- Currently completed: {_timesCompleted}/{_checklistNumber}");
+            Console.WriteLine($"[X] {_title} ({_description}) -- Currently completed: {_timesCompleted}/{_checklistNumber}");
     }
 
     public override string ToString()
