@@ -1,0 +1,67 @@
+hablar|verb|to speak|hablo,hablas,habla,hablamos,hablais,hablan|false|false
+comer|verb|to eat|como,comes,come,comemos,comeis,comen|false|false
+vivir|verb|to live|vivo,vives,vive,vivimos,vivis,viven|false|false
+ser|verb|to be (permanent)|soy,eres,es,somos,sois,son|true|false
+estar|verb|to be (temporary)|estoy,estas,esta,estamos,estais,estan|true|false
+tener|verb|to have|tengo,tienes,tiene,tenemos,teneis,tienen|true|false
+hacer|verb|to do/make|hago,haces,hace,hacemos,haceis,hacen|true|false
+ir|verb|to go|voy,vas,va,vamos,vais,van|true|false
+ver|verb|to see/watch|veo,ves,ve,vemos,veis,ven|true|false
+dar|verb|to give|doy,das,da,damos,dais,dan|true|false
+decir|verb|to say/tell|digo,dices,dice,decimos,decis,dicen|true|false
+poder|verb|to be able to/can|puedo,puedes,puede,podemos,podeis,pueden|true|false
+querer|verb|to want/love|quiero,quieres,quiere,queremos,quereis,quieren|true|false
+saber|verb|to know (information)|se,sabes,sabe,sabemos,sabeis,saben|true|false
+llegar|verb|to arrive|llego,llegas,llega,llegamos,llegais,llegan|false|false
+trabajar|verb|to work|trabajo,trabajas,trabaja,trabajamos,trabajais,trabajan|false|false
+escribir|verb|to write|escribo,escribes,escribe,escribimos,escribis,escriben|false|false
+leer|verb|to read|leo,lees,lee,leemos,leeis,leen|false|false
+escuchar|verb|to listen|escucho,escuchas,escucha,escuchamos,escuchais,escuchan|false|false
+mirar|verb|to look/watch|miro,miras,mira,miramos,mirais,miran|false|false
+jugar|verb|to play|juego,juegas,juega,jugamos,jugais,juegan|true|false
+correr|verb|to run|corro,corres,corre,corremos,correis,corren|false|false
+caminar|verb|to walk|camino,caminas,camina,caminamos,caminais,caminan|false|false
+nadar|verb|to swim|nado,nadas,nada,nadamos,nadais,nadan|false|false
+cantar|verb|to sing|canto,cantas,canta,cantamos,cantais,cantan|false|false
+bailar|verb|to dance|bailo,bailas,baila,bailamos,bailais,bailan|false|false
+cocinar|verb|to cook|cocino,cocinas,cocina,cocinamos,cocinais,cocinan|false|false
+beber|verb|to drink|bebo,bebes,bebe,bebemos,bebeis,beben|false|false
+comprar|verb|to buy|compro,compras,compra,compramos,comprais,compran|false|false
+vender|verb|to sell|vendo,vendes,vende,vendemos,vendeis,venden|false|false
+abrir|verb|to open|abro,abres,abre,abrimos,abris,abren|false|false
+cerrar|verb|to close|cierro,cierras,cierra,cerramos,cerrais,cierran|true|false
+pensar|verb|to think|pienso,piensas,piensa,pensamos,pensais,piensan|true|false
+creer|verb|to believe|creo,crees,cree,creemos,creeis,creen|false|false
+entender|verb|to understand|entiendo,entiendes,entiende,entendemos,entendeis,entienden|true|false
+conocer|verb|to know (people)|conozco,conoces,conoce,conocemos,conoceis,conocen|true|false
+recordar|verb|to remember|recuerdo,recuerdas,recuerda,recordamos,recordais,recuerdan|true|false
+olvidar|verb|to forget|olvido,olvidas,olvida,olvidamos,olvidais,olvidan|false|false
+esperar|verb|to wait/hope|espero,esperas,espera,esperamos,esperais,esperan|false|false
+buscar|verb|to look for|busco,buscas,busca,buscamos,buscais,buscan|false|false
+encontrar|verb|to find|encuentro,encuentras,encuentra,encontramos,encontrais,encuentran|true|false
+perder|verb|to lose|pierdo,pierdes,pierde,perdemos,perdeis,pierden|true|false
+ganar|verb|to win|gano,ganas,gana,ganamos,ganais,ganan|false|false
+necesitar|verb|to need|necesito,necesitas,necesita,necesitamos,necesitais,necesitan|false|false
+usar|verb|to use|uso,usas,usa,usamos,usais,usan|false|false
+llevar|verb|to carry/wear|llevo,llevas,lleva,llevamos,llevais,llevan|false|false
+traer|verb|to bring|traigo,traes,trae,traemos,traeis,traen|true|false
+dejar|verb|to leave|dejo,dejas,deja,dejamos,dejais,dejan|false|false
+seguir|verb|to follow|sigo,sigues,sigue,seguimos,seguis,siguen|true|false
+venir|verb|to come|vengo,vienes,viene,venimos,venis,vienen|true|false
+salir|verb|to leave/go out|salgo,sales,sale,salimos,salis,salen|true|false
+volver|verb|to return|vuelvo,vuelves,vuelve,volvemos,volveis,vuelven|true|false
+entrar|verb|to enter|entro,entras,entra,entramos,entrais,entran|false|false
+saludar|verb|to greet|saludo,saludas,saluda,saludamos,saludais,saludan|false|false
+despedir|verb|to say goodbye|despido,despides,despide,despedimos,despedis,despiden|true|false
+ayudar|verb|to help|ayudo,ayudas,ayuda,ayudamos,ayudais,ayudan|false|false
+ensenar|verb|to teach|enseno,ensenas,ensena,ensenamos,ensenais,ensenan|false|false
+aprender|verb|to learn|aprendo,aprendes,aprende,aprendemos,aprendeis,aprenden|false|false
+estudiar|verb|to study|estudio,estudias,estudia,estudiamos,estudiais,estudian|false|false
+trabajar|verb|to work|trabajo,trabajas,trabaja,trabajamos,trabajais,trabajan|false|false
+descansar|verb|to rest|descanso,descansas,descansa,descansamos,descansais,descansan|false|false
+dormir|verb|to sleep|duermo,duermes,duerme,dormimos,dormis,duermen|true|false
+despertar|verb|to wake up|despierto,despiertas,despierta,despertamos,despertais,despiertan|true|false
+levantar|verb|to get up|levanto,levantas,levanta,levantamos,levantais,levantan|false|false
+sentar|verb|to sit|siento,sientas,sienta,sentamos,sentais,sientan|true|false
+parar|verb|to stop|paro,paras,para,paramos,parais,paran|false|false
+empezar|verb|to start|empiezo,empiezas,empieza,empezamos,empezais,empiezan|true|false

@@ -16,11 +16,17 @@ class Program
             {
                 Console.WriteLine("Which type of quiz would you like to start? ");
                 int _quizSelection = int.Parse(Console.ReadLine());
+                Console.WriteLine("How many questions do you want your quiz to have? ");
+                int _quizQuestions = int.Parse(Console.ReadLine());
 
                 if (_quizSelection == 1)
                 {
-                    Quiz vocabulary = new VocabularyQuiz();
+                    Quiz vocabulary = new VocabularyQuiz(_quizQuestions);
                     vocabulary.StartQuiz();
+                }
+                else{
+                    Quiz conjugation = new ConjugationQuiz(_quizQuestions);
+                    conjugation.StartQuiz();
                 }
             }
             else if (_menuSelection == 2)

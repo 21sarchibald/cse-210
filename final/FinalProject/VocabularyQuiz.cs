@@ -2,10 +2,16 @@ using System.Reflection;
 
 class VocabularyQuiz : Quiz
 {
-    public VocabularyQuiz()
+    public VocabularyQuiz(int numberOfQuestions) : base(numberOfQuestions)
     {
 
     }
+
+    public override void StartQuiz()
+    {
+        throw new NotImplementedException();
+    }
+
     public override void CheckAnswer()
     {
         throw new NotImplementedException();
@@ -15,13 +21,11 @@ class VocabularyQuiz : Quiz
     {
         throw new NotImplementedException();
     }
-
-    public override void EndQuiz()
+    public void DisplayDefinition(string word)
     {
-        throw new NotImplementedException();
-    }
 
-    public override void StartQuiz()
+    }
+    public override void EndQuiz()
     {
         throw new NotImplementedException();
     }

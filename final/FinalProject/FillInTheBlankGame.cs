@@ -1,9 +1,19 @@
 class FillInTheBlankGame : Game
 {
     private int _numberOfQuestions;
+    List<string> _sentences;
     public FillInTheBlankGame(int numberOfQuestions)
     {
         _numberOfQuestions = numberOfQuestions;
+    }
+    
+    private string RemoveRandomWord()
+    {
+        return "removedWord"; // FIX THIS.
+    }
+    public void DisplayBlankSentence()
+    {
+
     }
     public override void CheckAnswer()
     {

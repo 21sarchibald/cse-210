@@ -4,10 +4,11 @@ abstract class Quiz
 {
     protected string _title;
     protected string _instructions;
+    protected int _numberOfQuestions;
 
-    public Quiz()
+    public Quiz(int numberOfQuestions)
     {
-   
+        _numberOfQuestions = numberOfQuestions;
     }
 
     public abstract void StartQuiz();
