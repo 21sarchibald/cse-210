@@ -38,9 +38,10 @@ class Program
 
                 if (_gameSelection == 1)
                 {
-                    Console.WriteLine("How many questions would you like your quiz to be? ");
+                    Console.Write("How many questions would you like your quiz to be? ");
                     int _numberOfQuestions = int.Parse(Console.ReadLine());
                     FillInTheBlankGame fillBlank = new FillInTheBlankGame(_numberOfQuestions);
+                    fillBlank.StartGame();
                 }
                 else 
                 {

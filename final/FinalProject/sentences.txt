@@ -1,0 +1,51 @@
+Hola, como estas?|1|Hello, how are you?
+Me llamo Ana.|1|My name is Ana.
+Donde vives?|1|Where do you live?
+Vivo en Espana.|1|I live in Spain.
+Que haces?|1|What do you do?
+Soy estudiante.|1|I am a student.
+Tengo un perro pequeno.|1|I have a small dog.
+Tienes hermanos?|1|Do you have siblings?
+Si, tengo dos hermanos.|2|Yes, I have two brothers.
+No, no tengo mascotas.|2|No, I don't have pets.
+Me gusta el chocolate.|2|I like chocolate.
+Que hora es?|1|What time is it?
+Es la una en punto.|2|It is one o'clock.
+Vamos al parque.|1|Let's go to the park.
+Que dia es hoy?|1|What day is today?
+Hoy es lunes.|1|Today is Monday.
+Estoy aprendiendo espanol.|1|I am learning Spanish.
+Puedo ayudarte?|1|Can I help you?
+Claro, gracias.|0|Of course, thank you.
+No entiendo.|1|I don't understand.
+Por favor, repite.|2|Please repeat.
+Lo siento mucho.|1|I'm very sorry.
+No pasa nada.|1|It's okay.
+Cuanto cuesta?|1|How much does it cost?
+Cuesta cinco euros.|1|It costs five euros.
+Hace calor hoy.|1|It's hot today.
+Esta lloviendo.|1|It's raining.
+Quieres un cafe?|2|Do you want a coffee?
+Si, gracias.|0|Yes, thank you.
+No, gracias.|0|No, thank you.
+Me gusta la musica.|2|I like music.
+Que musica escuchas?|2|What music do you listen to?
+Escucho pop.|0|I listen to pop.
+Tengo hambre.|1|I am hungry.
+Que quieres comer?|2|What do you want to eat?
+Quiero una pizza.|1|I want a pizza.
+Estoy cansado.|1|I am tired.
+Necesito descansar.|1|I need to rest.
+Que libro lees?|1|What book are you reading?
+Leo un libro de aventuras.|2|I am reading an adventure book.
+Vamos a la playa.|2|Let's go to the beach.
+Donde esta el bano?|1|Where is the bathroom?
+Esta a la derecha.|2|It's to the right.
+Necesito ayuda.|1|I need help.
+Voy a casa.|1|I am going home.
+Hasta manana.|1|See you tomorrow.
+Adios, nos vemos.|1|Goodbye, see you.
+Como se dice esto en espanol?|2|How do you say this in Spanish?
+Se dice 'mesa'.|1|You say 'mesa'.
+Tengo diez anos.|1|I am ten years old.
+Mi color favorito es el azul.|3|My favorite color is blue.
