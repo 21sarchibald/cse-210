@@ -11,6 +11,6 @@ abstract class Game
     }
 
     abstract public void StartGame();
-    abstract public void CheckAnswer();
+    abstract public bool CheckAnswer(string userInput, string correctAnswer);
     abstract public void EndGame();
 }

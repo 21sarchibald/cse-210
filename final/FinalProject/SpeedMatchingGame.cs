@@ -20,7 +20,7 @@ class SpeedMatchingGame : Game
     {
 
     }
-    public override void CheckAnswer()
+    public override bool CheckAnswer(string userInput, string correctAnswer)
     {
         throw new NotImplementedException();
     }

@@ -4,8 +4,10 @@ using System.Runtime.CompilerServices;
 class FillInTheBlankGame : Game
 {
     private int _numberOfQuestions;
-    List<string> _sentences;
+    private List<Sentence> _sentences;
+    private List<Sentence> _selectedSentences = [];
     private int _questionsCompleted = 0;
+    private int _correctAnswers = 0;
     public FillInTheBlankGame(int numberOfQuestions)
     {
         _numberOfQuestions = numberOfQuestions;
@@ -13,13 +15,36 @@ class FillInTheBlankGame : Game
     }
     public override void StartGame()
     {
-        while (_questionsCompleted < _numberOfQuestions)
-        {
+        // while (_questionsCompleted < _numberOfQuestions)
+        // {
             Console.WriteLine(_instructions);
-            LoadSentences();
+            _sentences = LoadSentences();
+            _selectedSentences = SelectRandomSentences(_numberOfQuestions);
+            foreach (Sentence sentence in _selectedSentences)
+            {
+                Console.WriteLine(sentence._meaning);
+                string hiddenWord = sentence.RemoveWord();
+                sentence._sentenceWords[sentence._wordToRemoveIndex] = hiddenWord;
+                
+                foreach (string sentenceWord in sentence._sentenceWords)
+                {
+                    Console.Write($"{sentenceWord} ");
+                }
+                string userAnswer = Console.ReadLine();
+                if (CheckAnswer(userAnswer, sentence._wordToRemove))
+                {
+                    Console.WriteLine("Correct!");
+                    _correctAnswers += 1;
+                }
+                else 
+                {
+                    Console.WriteLine("Incorrect");
+                }
+                Console.WriteLine();
+            }
             _questionsCompleted = 5;
 
-        }
+        // }
     }
     private List<Sentence> LoadSentences()
     {
@@ -37,31 +62,37 @@ class FillInTheBlankGame : Game
             string wordToRemove = sentenceWords[wordToRemoveIndex];
             string meaning = parts[2];
 
-            Sentence newSentence = new Sentence(meaning, wordToRemove);
+            Sentence newSentence = new Sentence(sentence, sentenceWords, wordToRemove, wordToRemoveIndex, meaning);
             sentenceList.Add(newSentence);
-            string hiddenWord = newSentence.RemoveWord();
-            sentenceWords[wordToRemoveIndex] = hiddenWord;
-            Console.WriteLine(sentence);
-
-            foreach (string sentenceWord in sentenceWords)
-            {
-                Console.Write($"{sentenceWord} ");
-            }
         }
         return sentenceList;
     }
-    // private Sentence SelectRandomSentence()
-    // {
-        
-    // }
+    private List<Sentence> SelectRandomSentences(int numberOfSentences)
+    {
+        while (_selectedSentences.Count < numberOfSentences)
+        {
+            Random rnd = new Random();
+            int randomIndex = rnd.Next(0, _sentences.Count);
+            Sentence newSentence = _sentences[randomIndex];
+            _selectedSentences.Add(newSentence);
+        }
+        return _selectedSentences;
+    }
     
     public void DisplayBlankSentence()
     {
 
     }
-    public override void CheckAnswer()
+    public override bool CheckAnswer(string userInput, string correctAnswer)
     {
-        Console.WriteLine("Not finished");
+        if (userInput == correctAnswer)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public override void EndGame()

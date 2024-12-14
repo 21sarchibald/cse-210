@@ -1,12 +1,19 @@
 class Sentence 
 {
-    private string _meaning;
-    private string _wordToRemove;
+    private string _sentence;
+    public string[] _sentenceWords;
+    public string _wordToRemove;
+    public int _wordToRemoveIndex;
+    public string _meaning;
 
-    public Sentence(string meaning, string wordToRemove)
+
+    public Sentence(string sentence, string[] sentenceWords, string wordToRemove, int wordToRemoveIndex, string meaning)
     {
-        _meaning = meaning;
+        _sentence = sentence;
+        _sentenceWords = sentenceWords;
         _wordToRemove = wordToRemove;
+        _wordToRemoveIndex = wordToRemoveIndex;
+        _meaning = meaning;
     }
     public string RemoveWord()
     {
