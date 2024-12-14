@@ -9,7 +9,7 @@ class FillInTheBlankGame : Game
     public FillInTheBlankGame(int numberOfQuestions)
     {
         _numberOfQuestions = numberOfQuestions;
-        _instructions = $"Welcome to the fill-in-the-blank game. This game will have {_numberOfQuestions} questions.\nType the word that belongs in the blank space for each question then press enter.\nGood luck!";
+        _instructions = $"Welcome to the fill-in-the-blank game. This game will have {_numberOfQuestions} questions.\nType the word that belongs in the blank space for each question then press enter.\nGood luck!\n";
     }
     public override void StartGame()
     {
@@ -39,7 +39,14 @@ class FillInTheBlankGame : Game
 
             Sentence newSentence = new Sentence(meaning, wordToRemove);
             sentenceList.Add(newSentence);
+            string hiddenWord = newSentence.RemoveWord();
+            sentenceWords[wordToRemoveIndex] = hiddenWord;
             Console.WriteLine(sentence);
+
+            foreach (string sentenceWord in sentenceWords)
+            {
+                Console.Write($"{sentenceWord} ");
+            }
         }
         return sentenceList;
     }
@@ -48,10 +55,6 @@ class FillInTheBlankGame : Game
         
     // }
     
-    private string RemoveWord()
-    {
-        return "removedWord"; // FIX THIS.
-    }
     public void DisplayBlankSentence()
     {
 
