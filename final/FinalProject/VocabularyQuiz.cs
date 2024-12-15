@@ -12,12 +12,12 @@ class VocabularyQuiz : Quiz
         throw new NotImplementedException();
     }
 
-    public override void CheckAnswer()
+    public override bool CheckAnswer(string userInput, string correctAnswer)
     {
         throw new NotImplementedException();
     }
 
-    public override void DisplayRandomWord()
+    public override List<Word> SelectRandomWords()
     {
         throw new NotImplementedException();
     }
@@ -26,6 +26,11 @@ class VocabularyQuiz : Quiz
 
     }
     public override void EndQuiz()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void LoadVerbs()
     {
         throw new NotImplementedException();
     }

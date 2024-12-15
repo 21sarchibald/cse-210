@@ -12,7 +12,8 @@ abstract class Quiz
     }
 
     public abstract void StartQuiz();
-    public abstract void DisplayRandomWord();
-    public abstract void CheckAnswer();
+    public abstract void LoadVerbs();
+    public abstract List<Word> SelectRandomWords();
+    public abstract bool CheckAnswer(string userInput, string correctAnswer);
     public abstract void EndQuiz();
 }
