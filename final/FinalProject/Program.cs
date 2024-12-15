@@ -42,6 +42,7 @@ class Program
                     int _numberOfQuestions = int.Parse(Console.ReadLine());
                     FillInTheBlankGame fillBlank = new FillInTheBlankGame(_numberOfQuestions);
                     fillBlank.StartGame();
+                    fillBlank.EndGame();
                 }
                 else 
                 {

@@ -15,8 +15,6 @@ class FillInTheBlankGame : Game
     }
     public override void StartGame()
     {
-        // while (_questionsCompleted < _numberOfQuestions)
-        // {
             Console.WriteLine(_instructions);
             _sentences = LoadSentences();
             _selectedSentences = SelectRandomSentences(_numberOfQuestions);
@@ -42,9 +40,7 @@ class FillInTheBlankGame : Game
                 }
                 Console.WriteLine();
             }
-            _questionsCompleted = 5;
 
-        // }
     }
     private List<Sentence> LoadSentences()
     {
@@ -97,7 +93,13 @@ class FillInTheBlankGame : Game
 
     public override void EndGame()
     {
-        Console.WriteLine("Not finished");
+        using (StreamWriter outputFile = new StreamWriter("progress.txt"))
+        {
+                outputFile.WriteLine(_correctAnswers.ToString());
+        }
+        
+        Console.WriteLine($"Thanks for playing! You earned {_correctAnswers} points!");
+        Console.WriteLine();
     }
 
 }
