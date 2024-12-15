@@ -93,9 +93,17 @@ class FillInTheBlankGame : Game
 
     public override void EndGame()
     {
+        string[] lines = System.IO.File.ReadAllLines("progress.txt");
+        int _previousPoints = 0;
+        foreach (string line in lines)
+        {
+            _previousPoints = int.Parse(line);
+        }
+        int _totalPoints = _correctAnswers + _previousPoints;
+        
         using (StreamWriter outputFile = new StreamWriter("progress.txt"))
         {
-                outputFile.WriteLine(_correctAnswers.ToString());
+            outputFile.WriteLine(_totalPoints.ToString());
         }
         
         Console.WriteLine($"Thanks for playing! You earned {_correctAnswers} points!");
