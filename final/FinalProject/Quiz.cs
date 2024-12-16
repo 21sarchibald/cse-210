@@ -5,6 +5,7 @@ abstract class Quiz
     protected string _title;
     protected string _instructions;
     protected int _numberOfQuestions;
+    protected int _correctAnswers;
 
     public Quiz(int numberOfQuestions)
     {

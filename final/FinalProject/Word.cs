@@ -29,4 +29,8 @@ class Word
     {
         return _verb;
     }
+    public string GetDefinition()
+    {
+        return _definition;
+    }
 }

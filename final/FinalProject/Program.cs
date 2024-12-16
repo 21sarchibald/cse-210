@@ -14,21 +14,24 @@ class Program
 
             if (_menuSelection == 1)
             {
-                Console.WriteLine("Which type of quiz would you like to start? ");
-                Console.WriteLine("1. Vocabulary Quiz");
-                Console.WriteLine("2. Conjugation Quiz");
+                Console.WriteLine("Quiz Options: \n");
+                Console.WriteLine("1. Vocabulary Quiz\n2. Conjugation Quiz\n");
+                Console.Write("Which type of quiz would you like to start? ");
                 int _quizSelection = int.Parse(Console.ReadLine());
-                Console.WriteLine("How many questions do you want your quiz to have? ");
+                Console.Write("How many questions do you want your quiz to have? ");
                 int _quizQuestions = int.Parse(Console.ReadLine());
 
                 if (_quizSelection == 1)
                 {
                     Quiz vocabulary = new VocabularyQuiz(_quizQuestions);
                     vocabulary.StartQuiz();
+                    vocabulary.EndQuiz();
                 }
-                else{
+                else
+                {
                     Quiz conjugation = new ConjugationQuiz(_quizQuestions);
                     conjugation.StartQuiz();
+                    conjugation.EndQuiz();
                 }
             }
             else if (_menuSelection == 2)

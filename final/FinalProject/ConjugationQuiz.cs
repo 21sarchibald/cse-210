@@ -3,6 +3,7 @@ class ConjugationQuiz : Quiz
     List<Word> _verbs = [];
     List<string> _forms = ["yo", "tu", "usted/el/ella", "nosotros", "vosotros", "usteded/ellos/ellas"];
     int _numberOfQuestions;
+    private int _correctAnswers = 0;
     List<Word> _selectedWords = [];
     
     public ConjugationQuiz(int numberOfQuestions) : base(numberOfQuestions)
@@ -25,12 +26,11 @@ class ConjugationQuiz : Quiz
             if (CheckAnswer(userInput, conjugatedVerb))
             {
                 Console.WriteLine("Correct!");
-                word.SetLearned();
+                _correctAnswers += 1;
             }
             else
             {
                 Console.WriteLine("Incorrect");
-                word.SetNotLearned();
             }
         }
 
@@ -67,7 +67,7 @@ class ConjugationQuiz : Quiz
 
     public override void EndQuiz()
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"Well done! You completed the Conjugation Quiz and got {_correctAnswers}/{_numberOfQuestions} correct answers!");
     }
 
     public override void LoadVerbs()
