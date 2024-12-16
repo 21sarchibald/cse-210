@@ -21,6 +21,10 @@ class Word
     {
         _isLearned = true;
     }
+    public void SetNotLearned()
+    {
+        _isLearned = false;
+    }
     public string GetVerb()
     {
         return _verb;

@@ -19,7 +19,7 @@ class ConjugationQuiz : Quiz
             int randomFormIndex = SelectRandomForm();
             string conjugatedVerb = word._conjugations[randomFormIndex];
             string wordForm = _forms[randomFormIndex];
-            Console.WriteLine($"Please conjugate the verb: {verb} in the following form: {wordForm}");
+            Console.WriteLine($"Please conjugate the verb '{verb}' in the following form: {wordForm}");
             Console.Write("Conjugated verb: ");
             string userInput = Console.ReadLine();
             if (CheckAnswer(userInput, conjugatedVerb))
@@ -30,6 +30,7 @@ class ConjugationQuiz : Quiz
             else
             {
                 Console.WriteLine("Incorrect");
+                word.SetNotLearned();
             }
         }
 
@@ -57,9 +58,8 @@ class ConjugationQuiz : Quiz
         }
         return _selectedWords;
     }
-    public int SelectRandomForm()
+    private int SelectRandomForm()
     {
-        Console.WriteLine("Fix this.");
         Random rnd = new Random();
         int randomIndex = rnd.Next(0, _selectedWords.Count);
         return randomIndex;
@@ -85,10 +85,10 @@ class ConjugationQuiz : Quiz
             string[] conjugationList = conjugations.Split(",");
             bool isIrregular = bool.Parse(parts[4]);
             bool isLearned = bool.Parse(parts[5]);
-            Console.WriteLine($"{verb}, {definition}, {conjugations}, {conjugationList} {isIrregular}, {isLearned}");
+            // Console.WriteLine($"{verb}, {definition}, {conjugations}, {conjugationList} {isIrregular}, {isLearned}");
 
             Word newWord = new Word(verb, definition, conjugationList, isIrregular, isLearned);
-            Console.WriteLine(newWord);
+            // Console.WriteLine(newWord);
             _verbs.Add(newWord);
         }
         // return _verbs;

@@ -15,6 +15,8 @@ class Program
             if (_menuSelection == 1)
             {
                 Console.WriteLine("Which type of quiz would you like to start? ");
+                Console.WriteLine("1. Vocabulary Quiz");
+                Console.WriteLine("2. Conjugation Quiz");
                 int _quizSelection = int.Parse(Console.ReadLine());
                 Console.WriteLine("How many questions do you want your quiz to have? ");
                 int _quizQuestions = int.Parse(Console.ReadLine());
