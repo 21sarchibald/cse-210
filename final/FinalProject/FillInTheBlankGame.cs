@@ -29,12 +29,12 @@ class FillInTheBlankGame : Game
                 string userAnswer = Console.ReadLine();
                 if (CheckAnswer(userAnswer, sentence._wordToRemove))
                 {
-                    Console.WriteLine("Correct!");
+                    Console.WriteLine("\nCorrect!");
                     _correctAnswers += 1;
                 }
                 else 
                 {
-                    Console.WriteLine("Incorrect");
+                    Console.WriteLine("\nIncorrect");
                 }
                 Console.WriteLine();
             }

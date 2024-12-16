@@ -18,17 +18,17 @@ class ConjugationQuiz : Quiz
             int randomFormIndex = SelectRandomForm();
             string conjugatedVerb = word._conjugations[randomFormIndex];
             string wordForm = _forms[randomFormIndex];
-            Console.WriteLine($"Please conjugate the verb '{verb}' in the following form: {wordForm}");
+            Console.WriteLine($"\nPlease conjugate the verb '{verb}' in the following form: {wordForm}");
             Console.Write("Conjugated verb: ");
             string userInput = Console.ReadLine();
             if (CheckAnswer(userInput, conjugatedVerb))
             {
-                Console.WriteLine("Correct!");
+                Console.WriteLine("\nCorrect!");
                 _correctAnswers += 1;
             }
             else
             {
-                Console.WriteLine("Incorrect");
+                Console.WriteLine("\nIncorrect");
             }
         }
 
@@ -65,7 +65,7 @@ class ConjugationQuiz : Quiz
 
     public override void EndQuiz()
     {
-        Console.WriteLine($"Well done! You completed the Conjugation Quiz and got {_correctAnswers}/{_numberOfQuestions} correct answers!");
+        Console.WriteLine($"\nWell done! You completed the Conjugation Quiz and got {_correctAnswers}/{_numberOfQuestions} correct answers!\n");
     }
 
     public override void LoadVerbs()

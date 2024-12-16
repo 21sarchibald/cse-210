@@ -4,8 +4,6 @@ class SpeedMatchingGame : Game
 {
     private int _duration;
     private List<Word> _words = [];
-    private int _correctCount;
-    private int _incorrectCount;
     private List<string> _allDefinitions = [];
     private List<string> _selectedDefinitions = [];
     public SpeedMatchingGame(int duration)
@@ -23,25 +21,26 @@ class SpeedMatchingGame : Game
         while (DateTime.Now < endTime)
         {
             Word word = _words[SelectRandomWord()];
-            Console.WriteLine($"Vocabulary Word: {word.GetVerb()}");
+            Console.WriteLine($"\nVocabulary Word: {word.GetVerb()}");
+            _selectedDefinitions = [];
             GetRandomDefinitions();
             string correctDefinition = word.GetDefinition();
 
             _selectedDefinitions[GetRandomDefinitionIndex()] = correctDefinition;
             
             DisplayDefinitions(_selectedDefinitions);
-            Console.Write("Which definition matches the vocab word? ");
+            Console.Write("\nWhich definition matches the vocab word? ");
             int userInputIndex = int.Parse(Console.ReadLine()) - 1;
             string userAnswer = _selectedDefinitions[userInputIndex];
             
             if (CheckAnswer(userAnswer, correctDefinition))
             {
-                Console.WriteLine("Correct!");
+                Console.WriteLine("\nCorrect!");
                 _correctAnswers += 1;
             }
             else
             {
-                Console.WriteLine("Incorrect");
+                Console.WriteLine("\nIncorrect");
             }
         }
     }
@@ -102,7 +101,7 @@ class SpeedMatchingGame : Game
             outputFile.WriteLine(_totalPoints.ToString());
         }
         
-        Console.WriteLine($"Thanks for playing! You earned {_correctAnswers} points!");
+        Console.WriteLine($"\nThanks for playing! You earned {_correctAnswers} points!");
         Console.WriteLine();
     }
 

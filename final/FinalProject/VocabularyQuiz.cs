@@ -23,13 +23,13 @@ class VocabularyQuiz : Quiz
             string userInput = Console.ReadLine();
             if (CheckAnswer(userInput, word.GetVerb()))
             {
-                Console.WriteLine("Correct!");
+                Console.WriteLine("\nCorrect!");
                 _correctAnswers += 1;
                 word.SetLearned();
             }
             else
             {
-                Console.WriteLine("Incorrect");
+                Console.WriteLine("\nIncorrect");
                 word.SetNotLearned();
             }
         }
@@ -64,12 +64,11 @@ class VocabularyQuiz : Quiz
     }
     public override void EndQuiz()
     {
-        Console.WriteLine($"Well done! You completed the Vocabulary Quiz and got {_correctAnswers}/{_numberOfQuestions} correct answers!");
+        Console.WriteLine($"\nWell done! You completed the Vocabulary Quiz and got {_correctAnswers}/{_numberOfQuestions} correct answers!");
     }
 
     public override void LoadVerbs()
     {
-         // _verbs = [];
         string[] lines = System.IO.File.ReadAllLines("verbs.txt");
 
         foreach (string line in lines)
@@ -82,12 +81,11 @@ class VocabularyQuiz : Quiz
             string[] conjugationList = conjugations.Split(",");
             bool isIrregular = bool.Parse(parts[4]);
             bool isLearned = bool.Parse(parts[5]);
-            // Console.WriteLine($"{verb}, {definition}, {conjugations}, {conjugationList} {isIrregular}, {isLearned}");
 
             Word newWord = new Word(verb, definition, conjugationList, isIrregular, isLearned);
-            // Console.WriteLine(newWord);
+
             _words.Add(newWord);
         }
-        // return _verbs;
+
     }
 }
