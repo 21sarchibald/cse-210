@@ -27,7 +27,21 @@ class SpeedMatchingGame : Game
 
     public override void EndGame()
     {
-        throw new NotImplementedException();
+        string[] lines = System.IO.File.ReadAllLines("progress.txt");
+        int _previousPoints = 0;
+        foreach (string line in lines)
+        {
+            _previousPoints = int.Parse(line);
+        }
+        int _totalPoints = _correctAnswers + _previousPoints;
+        
+        using (StreamWriter outputFile = new StreamWriter("progress.txt"))
+        {
+            outputFile.WriteLine(_totalPoints.ToString());
+        }
+        
+        Console.WriteLine($"Thanks for playing! You earned {_correctAnswers} points!");
+        Console.WriteLine();
     }
 
 }

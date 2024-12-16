@@ -1,9 +1,7 @@
 abstract class Game
 {
-    
-    protected string _title;
     protected string _instructions;
-    protected int _points;
+    protected int _correctAnswers = 0;
 
     public Game()
     {

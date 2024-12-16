@@ -6,8 +6,6 @@ class FillInTheBlankGame : Game
     private int _numberOfQuestions;
     private List<Sentence> _sentences;
     private List<Sentence> _selectedSentences = [];
-    private int _questionsCompleted = 0;
-    private int _correctAnswers = 0;
     public FillInTheBlankGame(int numberOfQuestions)
     {
         _numberOfQuestions = numberOfQuestions;

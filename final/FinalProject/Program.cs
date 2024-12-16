@@ -51,7 +51,11 @@ class Program
                 }
                 else 
                 {
-
+                    Console.Write("How long (in seconds) would you like your quiz to last? ");
+                    int _duration = int.Parse(Console.ReadLine());
+                    SpeedMatchingGame speedMatch = new SpeedMatchingGame(_duration);
+                    speedMatch.StartGame();
+                    speedMatch.EndGame();
                 }
             }
 
