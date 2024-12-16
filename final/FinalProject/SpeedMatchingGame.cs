@@ -1,28 +1,90 @@
+using System.Diagnostics.Metrics;
+
 class SpeedMatchingGame : Game
 {
     private int _duration;
+    private List<Word> _words = [];
     private int _correctCount;
     private int _incorrectCount;
-    private List<string> _definitions;
+    private List<string> _allDefinitions = [];
+    private List<string> _selectedDefinitions = [];
     public SpeedMatchingGame(int duration)
     {
         _duration = duration;
+        _instructions = $"Welcome to the speed-matching game. This game will last {_duration} seconds.\nType the number of the definition that best matches the listed word.\nGood luck!\n";
     }
+
     public override void StartGame()
     {
-        throw new NotImplementedException();
-    }
-    public void DisplayRandomWord()
-    {
-        
-    }
-    public void DisplayDefinitionsI()
-    {
+        LoadVerbs();
+        LoadDefinitions();
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
+        {
+            Word word = _words[SelectRandomWord()];
+            Console.WriteLine($"Vocabulary Word: {word.GetVerb()}");
+            GetRandomDefinitions();
+            string correctDefinition = word.GetDefinition();
 
+            _selectedDefinitions[GetRandomDefinitionIndex()] = correctDefinition;
+            
+            DisplayDefinitions(_selectedDefinitions);
+            Console.Write("Which definition matches the vocab word? ");
+            int userInputIndex = int.Parse(Console.ReadLine()) - 1;
+            string userAnswer = _selectedDefinitions[userInputIndex];
+            
+            if (CheckAnswer(userAnswer, correctDefinition))
+            {
+                Console.WriteLine("Correct!");
+                _correctAnswers += 1;
+            }
+            else
+            {
+                Console.WriteLine("Incorrect");
+            }
+        }
+    }
+    private int SelectRandomWord()
+    {
+        Random rnd = new Random();
+        int randomIndex = rnd.Next(0, _words.Count);
+        return randomIndex;
+    }
+    private void GetRandomDefinitions()
+    {
+        while (_selectedDefinitions.Count < 4)
+        {
+            Random rnd = new Random();
+            int randomIndex = rnd.Next(0, _words.Count);
+            _selectedDefinitions.Add(_allDefinitions[randomIndex]);
+        } 
+    }
+    private int GetRandomDefinitionIndex()
+    {
+        Random rnd = new Random();
+        int randomIndex = rnd.Next(0, _selectedDefinitions.Count);
+        return randomIndex;
+    }
+    private void DisplayDefinitions(List<string> definitions)
+    {
+        int count = 1;
+        foreach (string definition in definitions)
+        {
+            Console.WriteLine($"{count}. {definition}");
+            count += 1;
+        }
     }
     public override bool CheckAnswer(string userInput, string correctAnswer)
     {
-        throw new NotImplementedException();
+        if (userInput == correctAnswer)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public override void EndGame()
@@ -42,6 +104,35 @@ class SpeedMatchingGame : Game
         
         Console.WriteLine($"Thanks for playing! You earned {_correctAnswers} points!");
         Console.WriteLine();
+    }
+
+    private void LoadVerbs()
+    {
+        string[] lines = System.IO.File.ReadAllLines("verbs.txt");
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("|");
+
+            string verb = parts[0];
+            string definition = parts[2];
+            string conjugations = parts[3];
+            string[] conjugationList = conjugations.Split(",");
+            bool isIrregular = bool.Parse(parts[4]);
+            bool isLearned = bool.Parse(parts[5]);
+            // Console.WriteLine($"{verb}, {definition}, {conjugations}, {conjugationList} {isIrregular}, {isLearned}");
+
+            Word newWord = new Word(verb, definition, conjugationList, isIrregular, isLearned);
+            // Console.WriteLine(newWord);
+            _words.Add(newWord);
+        }
+    }
+    private void LoadDefinitions()
+    {
+        foreach (Word word in _words)
+        {
+            _allDefinitions.Add(word.GetDefinition());
+        }
     }
 
 }

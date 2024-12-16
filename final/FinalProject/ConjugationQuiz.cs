@@ -2,8 +2,6 @@ class ConjugationQuiz : Quiz
 {
     List<Word> _verbs = [];
     List<string> _forms = ["yo", "tu", "usted/el/ella", "nosotros", "vosotros", "usteded/ellos/ellas"];
-    int _numberOfQuestions;
-    private int _correctAnswers = 0;
     List<Word> _selectedWords = [];
     
     public ConjugationQuiz(int numberOfQuestions) : base(numberOfQuestions)

@@ -36,14 +36,14 @@ class Program
             }
             else if (_menuSelection == 2)
             {
-                Console.WriteLine("Game Options: ");
-                Console.WriteLine(" 1. Fill-in-the-blank\n 2. Speed-matching");
+                Console.WriteLine("\nGame Options: \n");
+                Console.WriteLine(" 1. Fill-in-the-blank\n 2. Speed-matching\n");
                 Console.Write("Which type of game would you like to play? ");
                 int _gameSelection = int.Parse(Console.ReadLine());
 
                 if (_gameSelection == 1)
                 {
-                    Console.Write("How many questions would you like your quiz to be? ");
+                    Console.Write("How many questions would you like your game to be? ");
                     int _numberOfQuestions = int.Parse(Console.ReadLine());
                     FillInTheBlankGame fillBlank = new FillInTheBlankGame(_numberOfQuestions);
                     fillBlank.StartGame();
@@ -51,7 +51,7 @@ class Program
                 }
                 else 
                 {
-                    Console.Write("How long (in seconds) would you like your quiz to last? ");
+                    Console.Write("How long (in seconds) would you like your game to last? ");
                     int _duration = int.Parse(Console.ReadLine());
                     SpeedMatchingGame speedMatch = new SpeedMatchingGame(_duration);
                     speedMatch.StartGame();

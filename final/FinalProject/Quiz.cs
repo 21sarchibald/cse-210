@@ -2,10 +2,8 @@ using System.Reflection;
 
 abstract class Quiz
 {
-    protected string _title;
-    protected string _instructions;
     protected int _numberOfQuestions;
-    protected int _correctAnswers;
+    protected int _correctAnswers = 0;
 
     public Quiz(int numberOfQuestions)
     {
