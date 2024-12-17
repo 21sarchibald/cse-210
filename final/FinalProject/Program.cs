@@ -61,7 +61,11 @@ class Program
 
             else if (_menuSelection == 3)
             {
-                
+                string[] points = System.IO.File.ReadAllLines("Progress.txt");
+                foreach (string line in points)
+                {
+                    Console.WriteLine($"\nIn total, you have earned {line} points\n");
+                }
             }
         }
         

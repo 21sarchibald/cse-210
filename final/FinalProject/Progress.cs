@@ -1,15 +1,11 @@
 class Progress
 {
-    private void AddWord()
-    {
-
-    }
-    private void AddPoints(int points)
-    {
-
-    }
     public void DisplayProgress()
     {
-        
+        string[] lines = System.IO.File.ReadAllLines("Progress.txt");
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
     }
 }
